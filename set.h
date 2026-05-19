@@ -63,7 +63,7 @@ public:
 
   std::string toString()
   {
-    return string();
+    return std::string();
   }
 
   Set<T> intersectionWith(const Set<T>& other)
