@@ -29,7 +29,7 @@ public:
     return *this;
   }
 
-  bool operator==(const Set<T>& other)
+  bool operator==(const Set<T>& other) const
   {
     return false;
   }
@@ -61,12 +61,12 @@ public:
   {
   }
 
-  std::string toString()
+  std::string toString() const
   {
     return std::string();
   }
 
-  Set<T> intersectionWith(const Set<T>& other)
+  Set<T> intersectionWith(const Set<T>& other) const
   {
     return Set();
   }
