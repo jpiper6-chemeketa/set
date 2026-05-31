@@ -106,6 +106,7 @@ public:
   std::string toString() const
   {
     std::stringstream stream;
+
     stream << '{';
     for (size_t i = 0; i < m_size; ++i) {
       if (i > 0)
@@ -113,12 +114,17 @@ public:
       stream << m_values[i];
     }
     stream << '}';
+
     return stream.str();
   }
 
   Set<T> intersectionWith(const Set<T>& other) const
   {
-    return Set();
+    Set<T> intersection = other;
+    for (size_t i = 0; i < m_size; ++i) {
+      other.add(m_values[i]);
+    }
+    return intersection;
   }
 
 private:
