@@ -26,7 +26,7 @@ public:
   {
     if (this != &other) {
       delete[] m_values;
-      m_values = new T[other.m_size];
+      m_values = new T[other.m_size]{};
       m_size = other.m_size;
       std::copy(other.m_values, other.m_values + m_size, m_values);
     }
