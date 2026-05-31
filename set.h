@@ -4,11 +4,11 @@
 #include <array>
 #include <iterator>
 
-using namespace std;
-
 template<typename T>
 class Set {
 public:
+  using namespace std;
+
   Set(): m_size(0), m_capacity(8), m_values(new T[m_capacity])
   {
   }
@@ -22,9 +22,7 @@ public:
       m_size(other.m_size), m_capacity(other.m_capacity),
       m_values(new T[m_capacity])
   {
-    for (int i = 0; i < m_size; ++i) {
-      m_values[i] = other.m_values[i];
-    }
+    copy(other.m_values, other.m_values + m_size, m_values);
   }
 
   Set& operator=(const Set<T>& other)
