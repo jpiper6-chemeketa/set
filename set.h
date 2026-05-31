@@ -104,7 +104,7 @@ public:
   }
 
 private:
-  T* m_values;
   size_t m_size;
   size_t m_capacity;
+  T* m_values;
 };
