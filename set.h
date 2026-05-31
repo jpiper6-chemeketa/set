@@ -49,7 +49,7 @@ public:
     T* existing = std::find(m_values, m_values + m_size, value);
     if (existing == m_values + m_size) {
       if (m_size == m_capacity) {
-        T* values = new T[m_capacity * 2];
+        T* values = new T[m_capacity * 2]{};
 
         std::copy(m_values, m_values + m_capacity, values);
 
