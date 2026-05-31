@@ -2,13 +2,10 @@
 
 #include <algorithm>
 #include <array>
-#include <iterator>
 
 template<typename T>
 class Set {
 public:
-  using namespace std;
-
   Set(): m_size(0), m_capacity(8), m_values(new T[m_capacity])
   {
   }
@@ -22,7 +19,7 @@ public:
       m_size(other.m_size), m_capacity(other.m_capacity),
       m_values(new T[m_capacity])
   {
-    copy(other.m_values, other.m_values + m_size, m_values);
+    std::copy(other.m_values, other.m_values + m_size, m_values);
   }
 
   Set& operator=(const Set<T>& other)
@@ -31,7 +28,7 @@ public:
       delete[] m_values;
       m_values = new T[other.getSize()];
       m_size = other.getSize();
-      copy(other.m_values, other.m_values + m_size, m_values);
+      std::copy(other.m_values, other.m_values + m_size, m_values);
     }
     return *this;
   }
