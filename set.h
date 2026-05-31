@@ -38,7 +38,15 @@ public:
 
   bool operator==(const Set<T>& other) const
   {
-    return false;
+    if (m_size != other.m_size)
+      return false;
+
+    for (i = 0; i < m_size; ++i) {
+      if (!other.contains(m_values[i]))
+        return false;
+    }
+
+    return true;
   }
 
   bool contains(const T& value) const
