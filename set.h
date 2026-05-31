@@ -59,7 +59,7 @@ public:
       }
     }
 
-    m_values[getSize()] = value;
+    m_values[m_size] = value;
     ++m_size;
   }
 
