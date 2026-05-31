@@ -22,14 +22,21 @@ public:
       m_size(other.m_size), m_capacity(other.m_capacity),
       m_values(new T[m_capacity])
   {
-    copy(std::begin(other), std::end(other), std::begin(m_values));
-    // for (int i = 0; i < m_size; ++i) {
-    //   m_values[i] = other.m_values[i];
-    // }
+    for (int i = 0; i < m_size; ++i) {
+      m_values[i] = other.m_values[i];
+    }
   }
 
   Set& operator=(const Set<T>& other)
   {
+    if (this != &other) {
+      delete[] m_values;
+      m_values = new T[other.getSize()];
+      m_size = other.getSize();
+      for (int i = 0; i < m_size; ++i) {
+        m_values[i] = other.m_values[i];
+      }
+    }
     return *this;
   }
 
