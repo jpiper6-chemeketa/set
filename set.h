@@ -6,7 +6,7 @@
 template<typename T>
 class Set {
 public:
-  Set(): m_size(0), m_capacity(8), m_values(new T[m_capacity])
+  Set(): m_size(0), m_capacity(8), m_values(new T[m_capacity]{})
   {
   }
 
@@ -17,7 +17,7 @@ public:
 
   Set(const Set<T>& other):
       m_size(other.m_size), m_capacity(other.m_capacity),
-      m_values(new T[m_capacity])
+      m_values(new T[m_capacity]{})
   {
     std::copy(other.m_values, other.m_values + m_size, m_values);
   }
