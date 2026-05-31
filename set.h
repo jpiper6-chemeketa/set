@@ -88,6 +88,6 @@ public:
 
 private:
   T* m_values;
-  int m_size;
+  size_t m_size;
   size_t m_capacity;
 };
