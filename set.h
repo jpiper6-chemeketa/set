@@ -26,8 +26,8 @@ public:
   {
     if (this != &other) {
       delete[] m_values;
-      m_values = new T[other.getSize()];
-      m_size = other.getSize();
+      m_values = new T[other.m_size];
+      m_size = other.m_size;
       std::copy(other.m_values, other.m_values + m_size, m_values);
     }
     return *this;
@@ -46,39 +46,47 @@ public:
 
   void add(const T& value)
   {
-  }
+    if (m_size == m_capacity) {
+      values = new T[m_capacity * 2];
 
-  int getSize() const
-  {
-    return m_size;
-  }
+      std::copy(m_values, m_values = m_capacity, values);
 
-  void remove(const T& it)
-  {
-  }
+      delete[] m_values;
+      m_values = values;
+      m_capacity = m_capacity * 2;
+    }
 
-  T removeSmallest()
-  {
-    return T{};
-  }
+    int getSize() const
+    {
+      return m_size + 1;
+    }
 
-  void clear()
-  {
-    m_size = 0;
-  }
+    void remove(const T& it)
+    {
+    }
 
-  std::string toString() const
-  {
-    return std::string();
-  }
+    T removeSmallest()
+    {
+      return T{};
+    }
 
-  Set<T> intersectionWith(const Set<T>& other) const
-  {
-    return Set();
-  }
+    void clear()
+    {
+      m_size = 0;
+    }
 
-private:
-  T* m_values;
-  int m_size;
-  int m_capacity;
-};
+    std::string toString() const
+    {
+      return std::string();
+    }
+
+    Set<T> intersectionWith(const Set<T>& other) const
+    {
+      return Set();
+    }
+
+  private:
+    T* m_values;
+    int m_size;
+    int m_capacity;
+  };
