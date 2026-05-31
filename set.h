@@ -82,7 +82,7 @@ public:
   void remove(const T& value)
   {
     T* existing = std::find(m_values, m_values + m_size, value);
-    if (existing != m_values + size) {
+    if (existing != m_values + m_size) {
       std::copy(existing, m_values + m_size);
       --m_size;
     }
