@@ -51,8 +51,7 @@ public:
 
   bool contains(const T& value) const
   {
-    return std::find(m_values, m_values + m_capacity, value)
-           != m_values + m_capacity;
+    return std::find(m_values, m_values + m_size, value) != m_values + m_size;
   }
 
   void add(const T& value)
