@@ -90,7 +90,7 @@ public:
   T removeSmallest()
   {
     if (m_size == 0)
-      throw out_of_range("Can not removeSmallest on an empty set");
+      throw std::out_of_range("Can not removeSmallest on an empty set");
 
     T min = *std::min_element(m_values, m_values + m_size);
     remove(min);
