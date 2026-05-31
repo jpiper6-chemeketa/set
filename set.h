@@ -55,38 +55,39 @@ public:
       m_values = values;
       m_capacity = m_capacity * 2;
     }
+  }
 
-    int getSize() const
-    {
-      return m_size + 1;
-    }
+  int getSize() const
+  {
+    return m_size + 1;
+  }
 
-    void remove(const T& it)
-    {
-    }
+  void remove(const T& it)
+  {
+  }
 
-    T removeSmallest()
-    {
-      return T{};
-    }
+  T removeSmallest()
+  {
+    return T{};
+  }
 
-    void clear()
-    {
-      m_size = 0;
-    }
+  void clear()
+  {
+    m_size = 0;
+  }
 
-    std::string toString() const
-    {
-      return std::string();
-    }
+  std::string toString() const
+  {
+    return std::string();
+  }
 
-    Set<T> intersectionWith(const Set<T>& other) const
-    {
-      return Set();
-    }
+  Set<T> intersectionWith(const Set<T>& other) const
+  {
+    return Set();
+  }
 
-  private:
-    T* m_values;
-    int m_size;
-    int m_capacity;
-  };
+private:
+  T* m_values;
+  int m_size;
+  int m_capacity;
+};
