@@ -122,7 +122,8 @@ public:
   {
     Set<T> intersection;
     for (size_t i = 0; i < m_size; ++i) {
-      if (other.contains(m_values[i])) intersection.add(m_values[i];
+      if (other.contains(m_values[i]))
+        intersection.add(m_values[i]);
     }
     return intersection;
   }
