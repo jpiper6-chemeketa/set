@@ -2,6 +2,7 @@
 
 #include <algorithm>
 #include <array>
+#include <iterator>
 
 using namespace std;
 
@@ -22,9 +23,9 @@ public:
       m_values(new T[m_capacity])
   {
     copy(begin(other), end(other), begin(m_values));
-    for (int i = 0; i < m_size; ++i) {
-      m_values[i] = other.m_values[i];
-    }
+    // for (int i = 0; i < m_size; ++i) {
+    //   m_values[i] = other.m_values[i];
+    // }
   }
 
   Set& operator=(const Set<T>& other)
