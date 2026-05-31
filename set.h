@@ -57,10 +57,10 @@ public:
         m_values = values;
         m_capacity = m_capacity * 2;
       }
-    }
 
-    m_values[m_size] = value;
-    ++m_size;
+      m_values[m_size] = value;
+      ++m_size;
+    }
   }
 
   int getSize() const
