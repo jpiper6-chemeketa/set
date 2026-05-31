@@ -76,7 +76,7 @@ public:
 
   int getSize() const
   {
-    return m_size;
+    return static_cast<int>(m_size);
   }
 
   void remove(const T& it)
