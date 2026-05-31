@@ -41,7 +41,7 @@ public:
     if (m_size != other.m_size)
       return false;
 
-    for (size_t i = 0; i < m_size; ++i) {
+    for (int i = 0; i < m_size; ++i) {
       if (!other.contains(m_values[i]))
         return false;
     }
