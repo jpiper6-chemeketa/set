@@ -110,7 +110,7 @@ public:
     stream << '{';
     for (size_t i = 0; i < m_size; ++i) {
       if (i > 0)
-        stream << ',';
+        stream << ", ";
       stream << m_values[i];
     }
     stream << '}';
