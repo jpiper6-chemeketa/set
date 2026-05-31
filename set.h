@@ -40,7 +40,7 @@ public:
 
   bool contains(const T& value) const
   {
-    return false;
+    return std::find(m_values, m_values + m_capacity, value) != std::end(m_values));
   }
 
   void add(const T& value)
