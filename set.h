@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <array>
 
+using namespace std;
+
 template<typename T>
 class Set {
 public:
@@ -19,6 +21,7 @@ public:
       m_size(other.m_size), m_capacity(other.m_capacity),
       m_values(new T[m_capacity])
   {
+    copy(begin(other), end(other), begin(m_values));
     for (int i = 0; i < m_size; ++i) {
       m_values[i] = other.m_values[i];
     }
