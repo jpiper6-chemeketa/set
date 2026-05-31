@@ -57,7 +57,9 @@ public:
 
   void add(const T& value)
   {
-    if (std::find(m_values, m_values + m_size, value) == m_values + m_size) {
+    if (m_size = 0
+                 || std::find(m_values, m_values + m_size, value)
+                        == m_values + m_size) {
       if (m_size == m_capacity) {
         T* values = new T[m_capacity * 2];
 
