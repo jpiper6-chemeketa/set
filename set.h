@@ -65,7 +65,7 @@ public:
 
   int getSize() const
   {
-    return m_size + 1;
+    return m_size;
   }
 
   void remove(const T& it)
