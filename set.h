@@ -83,7 +83,7 @@ public:
   {
     T* existing = std::find(m_values, m_values + m_size, value);
     if (existing != m_values + m_size) {
-      std::copy(existing, m_values + m_size);
+      std::copy(existing + 1, m_values + m_size, existing);
       --m_size;
     }
   }
