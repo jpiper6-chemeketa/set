@@ -47,7 +47,7 @@ public:
   void add(const T& value)
   {
     if (m_size == m_capacity) {
-      values = new T[m_capacity * 2];
+      T* values = new T[m_capacity * 2];
 
       std::copy(m_values, m_values = m_capacity, values);
 
