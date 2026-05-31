@@ -31,9 +31,7 @@ public:
       delete[] m_values;
       m_values = new T[other.getSize()];
       m_size = other.getSize();
-      for (int i = 0; i < m_size; ++i) {
-        m_values[i] = other.m_values[i];
-      }
+      copy(other.m_values, other.m_values + m_size, m_values);
     }
     return *this;
   }
@@ -68,6 +66,7 @@ public:
 
   void clear()
   {
+    m_size = 0;
   }
 
   std::string toString() const
