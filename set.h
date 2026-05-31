@@ -81,7 +81,7 @@ public:
 
   void remove(const T& value)
   {
-    T* existing = std::find(m_values, m_size, value);
+    T* existing = std::find(m_values, m_values + m_size, value);
   }
 
   T removeSmallest()
