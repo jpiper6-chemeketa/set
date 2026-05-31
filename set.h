@@ -46,15 +46,21 @@ public:
 
   void add(const T& value)
   {
-    if (m_size == m_capacity) {
-      T* values = new T[m_capacity * 2];
+    if (std::find(m_values, m_values + m_capacity, value)
+        != m_values + m_capacity) {
+      if (m_size == m_capacity) {
+        T* values = new T[m_capacity * 2];
 
-      std::copy(m_values, m_values + m_capacity, values);
+        std::copy(m_values, m_values + m_capacity, values);
 
-      delete[] m_values;
-      m_values = values;
-      m_capacity = m_capacity * 2;
+        delete[] m_values;
+        m_values = values;
+        m_capacity = m_capacity * 2;
+      }
     }
+
+    m_values[getSize()] = value;
+    ++m_size;
   }
 
   int getSize() const
