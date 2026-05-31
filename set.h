@@ -6,7 +6,7 @@
 template<typename T>
 class Set {
 public:
-  Set(): m_size(0), m_capacity(8), m_values(new T[m_capacity]{})
+  Set(): m_size(0), m_capacity(8), m_values(new T[8])
   {
   }
 
@@ -17,7 +17,7 @@ public:
 
   Set(const Set<T>& other):
       m_size(other.m_size), m_capacity(other.m_capacity),
-      m_values(new T[m_capacity]{})
+      m_values(new T[m_capacity])
   {
     std::copy(other.m_values, other.m_values + m_size, m_values);
   }
@@ -26,7 +26,7 @@ public:
   {
     if (this != &other) {
       delete[] m_values;
-      m_values = new T[other.m_size]{};
+      m_values = new T[other.m_size];
       m_size = other.m_size;
       std::copy(other.m_values, other.m_values + m_size, m_values);
     }
@@ -49,7 +49,7 @@ public:
     T* existing = std::find(m_values, m_values + m_size, value);
     if (existing == m_values + m_size) {
       if (m_size == m_capacity) {
-        T* values = new T[m_capacity * 2]{};
+        T* values = new T[m_capacity * 2];
 
         std::copy(m_values, m_values + m_capacity, values);
 
