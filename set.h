@@ -122,7 +122,7 @@ public:
   {
     Set<T> intersection = other;
     for (size_t i = 0; i < m_size; ++i) {
-      intersection.add(m_values[i]);
+      intersection.remove(m_values[i]);
     }
     return intersection;
   }
