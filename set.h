@@ -105,7 +105,15 @@ public:
 
   std::string toString() const
   {
-    return std::string();
+    std::stringstream stream;
+    stream << '{';
+    for (size_t i = 0; i < m_size; ++i) {
+      if (i > 0)
+        stream << ',';
+      stream << m_values[i];
+    }
+    stream << '}';
+    return stream.str();
   }
 
   Set<T> intersectionWith(const Set<T>& other) const
